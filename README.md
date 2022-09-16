@@ -5,5 +5,5 @@ will make mylist.txt "https://trac.ffmpeg.org/wiki/Concatenate" but will generea
 # usage
 
 * just darag and drop a folder or file from the folder, will make mylist.txt next to the script
-* will detect the output extension from files in the folder
+* will detect the output extension from the last file in folder, or the file that was drag and drop to the script
 * if ffmpeg.exe its found next to the script, the scrip will generate output.mp4 from mylist.txt using concat
