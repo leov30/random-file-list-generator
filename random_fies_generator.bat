@@ -6,17 +6,16 @@ if "%~1"=="" echo onlydragand drop file or folder&pause&exit
 
 if exist "%~1\" (
 	set "_path=%~1"
+	::its a folder get file extension from the last file in folder
+	for %%g in ("%~1\*") do set "_ext=%%~xg"
 )else (
 	set "_path=%cd%"
+	set "_ext=%~x1"
 )
 
 type nul>"%temp%\index.1"
 type nul>"%temp%\rand.1"
 type nul>"%temp%\mylist.1"
-
-::get file extension from the last file in folder
-for %%g in ("%_path%\*") do set "_ext=%%~xg"
-
 
 set /a _max=0
 for %%g in ("%_path%\*.%_ext%") do call :make_index "%%g"
